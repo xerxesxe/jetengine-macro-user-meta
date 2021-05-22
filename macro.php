@@ -134,6 +134,7 @@ if ( ! class_exists( 'Jet_Engine_Listings_Macros' ) ) {
 					'label' => esc_html__( 'Current user ID', 'jet-engine' ),
 					'cb'    => 'get_current_user_id',
 				),
+				//added custom Code
 				'current_user_meta' => array(
 					'label' => esc_html__( 'Current user meta', 'jet-engine' ),
 					'cb'    => array( $this, 'get_current_user_meta' ),
@@ -322,6 +323,7 @@ if ( ! class_exists( 'Jet_Engine_Listings_Macros' ) ) {
 		}
 		
 		/**
+		 * Added custom code
 		 * Returns User Meta of current User
 		 * 
 		 * @return string
@@ -331,7 +333,6 @@ if ( ! class_exists( 'Jet_Engine_Listings_Macros' ) ) {
 			$usermeta = get_user_meta( $userid, $meta_key, true );
 			if ( is_array( $usermeta ) ) { 
 				return implode( ',', $usermeta );
-				echo $usermeta;
 			} else {
 				return $usermeta;
 			}
